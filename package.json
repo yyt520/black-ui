@@ -1,0 +1,120 @@
+{
+  "name": "black-ui",
+  "version": "1.9.1",
+  "description": "React components library",
+  "title": "Black UI",
+  "author": "Black",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "black-ui",
+    "component",
+    "design",
+    "frontend",
+    "react",
+    "react-component",
+    "ui"
+  ],
+  "homepage": "https://yyt520.github.io/black-ui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yyt520/black-ui"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "dumi dev",
+    "test": "jest",
+    "clean": "rimraf ./dist",
+    "build": "yarn build:lib && yarn build:docs",
+    "build:docs": "dumi build",
+    "build:lib": "yarn clean && yarn build-ts && yarn build-css",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "dart-sass ./components/style/index.scss ./dist/index.css",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,scss,md,json}\"",
+    "lint": "yarn lint:eslint && yarn lint:stylelint",
+    "lint:eslint": "eslint -c .eslintrc.js --ext .ts,.tsx,.js ./components --fix",
+    "lint:stylelint": "stylelint **/*.{html,css,scss} --fix",
+    "typecheck": "tsc --noEmit -p ./tsconfig.json",
+    "commit": "git-cz",
+    "bump-version": "standard-version --message 'chore(release): %s\n\n[skip publish]' --no-verify",
+    "bump-version:prerelease": "yarn bump-version --skip.changelog=true --skip.commit=true --skip.tag=true --prerelease ${TRAVIS_BUILD_NUMBER}"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint --config .commitlintrc.js -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ],
+    "*.{scss,css}": [
+      "stylelint --fix"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@types/cheerio": "^0.22.22",
+    "@types/classnames": "^2.2.11",
+    "@types/enzyme": "^3.10.8",
+    "@types/jest": "^26.0.15",
+    "@types/react-transition-group": "^4.4.0",
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "@typescript-eslint/parser": "^4.4.0",
+    "@umijs/plugin-sass": "^1.1.1",
+    "@wojtekmaj/enzyme-adapter-react-17": "0.3.2",
+    "commitizen": "^4.2.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "dart-sass": "^1.25.0",
+    "dumi": "^1.0.10",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "enzyme-to-json": "^3.6.1",
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "gh-pages": "^3.0.0",
+    "husky": "^4.3.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "rimraf": "^3.0.2",
+    "standard-version": "^9.0.0",
+    "stylelint": "^13.7.2",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0",
+    "ts-jest": "^26.4.3",
+    "typescript": "^4.2.2",
+    "yorkie": "^2.0.0",
+    "monki-ui": "^1.9.1"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.3.0",
+    "classnames": "^2.2.6",
+    "monki-ui": "^1.9.1",
+    "react-transition-group": "^4.4.1"
+  },
+  "resolutions": {
+    "remark": "12.0.0"
+  }
+}

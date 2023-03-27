@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "ESNext",
+    "target": "ES5",
+    "declaration": true,
+    "jsx": "react",
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["components/"],
+  "exclude": [
+    "components/**/__tests__",
+    "components/**/demos",
+    "components/**/style",
+    "components/**/*.md"
+  ]
+}
