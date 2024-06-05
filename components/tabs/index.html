@@ -11,18 +11,32 @@
       type="image/x-icon"
       href="https://img.icons8.com/ultraviolet/2x/year-of-monkey.png"
     />
-    <link rel="stylesheet" href="/black-ui/umi.css" />
+    <link rel="stylesheet" href="/black-ui/umi.c3703b8e.css" />
     <script>
-      window.routerBase = "/black-ui";
+      window.routerBase = "/black-ui/";
     </script>
     <script>
-      //! umi version: 3.2.27
+      //! umi version: 3.5.41
     </script>
-    <title>Tabs 标签页</title>
+    <script>
+      !(function () {
+        var e =
+            navigator.cookieEnabled && void 0 !== window.localStorage
+              ? localStorage.getItem("dumi:prefers-color")
+              : "auto",
+          o = window.matchMedia("(prefers-color-scheme: dark)").matches,
+          t = ["light", "dark", "auto"];
+        document.documentElement.setAttribute(
+          "data-prefers-color",
+          e === t[2] ? (o ? t[1] : t[0]) : t.indexOf(e) > -1 ? e : t[0]
+        );
+      })();
+    </script>
+    <title>Tabs 标签页 - Black UI</title>
   </head>
   <body>
     <div id="root"></div>
 
-    <script src="/black-ui/umi.js"></script>
+    <script src="/black-ui/umi.3797d94e.js"></script>
   </body>
 </html>
