@@ -4,7 +4,7 @@ export default defineConfig({
   title: 'Black UI',
   favicon: 'https://img.icons8.com/ultraviolet/2x/year-of-monkey.png',
   logo: 'https://img.icons8.com/ultraviolet/2x/year-of-monkey.png',
-  base: '/black-ui',
+  base: '/black-ui/',
   publicPath: '/black-ui/',
   outputPath: 'docs-dist',
   mode: 'site',
